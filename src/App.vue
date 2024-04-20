@@ -1,24 +1,32 @@
 <template>
   <div id="app">
-    <router-view/>
+    <div id = "card">
+      <PersonalCard></PersonalCard>
+    </div>
+    <div id = "detail">
+      <PersonalDetail></PersonalDetail>
+    </div>
+    <div id = 'navigation'>
+      <PersonalNavigation></PersonalNavigation>
+    </div>
   </div>
 </template>
 
 <script>
+import PersonalCard from '@/components/PersonalCard.vue'
+import PersonalDetail from '@/components/PersonalDetail.vue'
+import PersonalNavigation from '@/components/PersonalNavigation.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    PersonalCard,
+    PersonalDetail,
+    PersonalNavigation
+  }
 }
 </script>
 
 <style lang="less">
-@import './assets/less/theme_color.less';
-@import './assets/less/theme_text.less';
-
-#app {
-  font-family: @text-style;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: @theme-background-color;
-}
+@import './assets/less/global_style.less';
 </style>
