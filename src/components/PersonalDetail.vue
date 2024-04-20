@@ -5,7 +5,8 @@
         </div>
         <div class = 'content'>
 
-</div>
+        </div>
+        <div class = "block"></div>
     </div>
 </template>
 
@@ -27,6 +28,11 @@
         margin-top: 20px;
         background-color: @theme-component-color;
         border-radius: 20px;
+    }
+
+    .block {
+        width: 100%;
+        min-height: 10%;
     }
 }
 </style>
