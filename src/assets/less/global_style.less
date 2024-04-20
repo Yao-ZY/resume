@@ -1,0 +1,38 @@
+@import './theme_color.less';
+@import './theme_text.less';
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: @theme-background-color;
+    font-family: @text-style;
+    color: @text-color;
+    text-align: center;
+    font-weight: 800;
+    
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    #card {
+        flex-grow: 5;
+    }
+
+    #detail {
+        flex-grow: 14;
+    }
+
+    #navigation {
+        flex-grow: 1;
+    }
+  }
+
