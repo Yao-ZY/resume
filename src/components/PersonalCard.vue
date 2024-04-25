@@ -124,7 +124,6 @@ export default {
         width: 60%;
         height: 12%;
         float:left;
-
     }
 
     .content {
@@ -148,7 +147,7 @@ export default {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-top: 30px;
+                margin-top: 20px;
 
                 img {
                     width: 93%;
@@ -159,7 +158,7 @@ export default {
         }
 
         .name {
-            margin-top:20px;
+            margin-top:10px;
         }
 
         .career {
@@ -249,8 +248,8 @@ export default {
             .button {
                 width: 70%;
                 background-color: @theme-color;
-                margin-top: 10px;
-                margin-bottom: 10px;
+                margin-top: 15px;
+                margin-bottom: 15px;
                 font-weight: 700;
             }
             
