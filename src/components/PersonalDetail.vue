@@ -1,6 +1,6 @@
 <template>
     <div class = 'detail'>
-        <div class = 'content' style="margin-top: 48px">
+        <div id = 'introduce' class = 'content' style="margin-top: 48px">
             <el-button class="tag" round icon="el-icon-s-home" style="color: #1DA56C; font-weight: 800;">
                 INTRODUCE
             </el-button>
@@ -23,7 +23,7 @@
             </el-button>
             <div class = "inline_block"></div>
         </div>
-        <div class = 'content'>
+        <div id = 'aboutMe' class = 'content'>
             <el-button class="tag" round icon="el-icon-user-solid" style="color: #1DA56C; font-weight: 800;">
                 ABOUT ME
             </el-button>
@@ -98,7 +98,7 @@
             <div class = 'title'>
                 Work <strong style="color: #1DA56C">Experience </strong>
             </div>
-            <div class = 'work'>
+            <div id = 'work' class = 'work'>
                 <div class = 'work_career'>
                     <div class = 'work_career_company'>
                             Beijing Momo Technology Co., Ltd
@@ -161,7 +161,7 @@
             <div class = 'title'>
                 Education <strong style="color: #1DA56C">Experience </strong>
             </div>
-            <div class = 'education'>
+            <div id = 'education' class = 'education'>
                 <div class = 'education_university'>
                     <div class = 'education_university_1'>
                         <div class = 'education_university_name'>
@@ -210,6 +210,42 @@
 </template>
 
 <script>
+export default {
+    props: {},
+
+    mounted() {
+        document.getElementById("detail").addEventListener('scroll', this.onScroll)
+    },
+
+    destroy() {
+        document.getElementById("detail").removeEventListener('scroll', this.onScroll)
+    },
+
+    methods: {
+        onScroll() {
+            const detail = document.getElementById("detail");
+            const scrollTop = detail.scrollTop
+            const introduce = document.getElementById('introduce')
+            const aboutMe = document.getElementById('aboutMe')
+            const work = document.getElementById('work')
+            const education = document.getElementById('education')
+            const offsetTopArr = [
+                introduce.offsetTop,
+                aboutMe.offsetTop,
+                work.offsetTop,
+                education.offsetTop
+            ]
+
+            let navIndex = 0
+            for (let n = 0; n < 4; n++) {
+                if (scrollTop >= offsetTopArr[n]) {
+                    navIndex = n;
+                }
+            }
+            this.$emit('activeHandle', navIndex)
+        }
+    }
+}
 </script>
 
 <style lang="less" scoped>

@@ -4,10 +4,10 @@
       <PersonalCard></PersonalCard>
     </div>
     <div id = "detail">
-      <PersonalDetail></PersonalDetail>
+      <PersonalDetail v-on:activeHandle="activeHandle"></PersonalDetail>
     </div>
     <div id = 'navigation'>
-      <PersonalNavigation></PersonalNavigation>
+      <PersonalNavigation :active = "active"></PersonalNavigation>
     </div>
   </div>
 </template>
@@ -19,10 +19,20 @@ import PersonalNavigation from '@/components/PersonalNavigation.vue'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      active: "1"
+    }
+  },
   components: {
     PersonalCard,
     PersonalDetail,
     PersonalNavigation
+  },
+  methods: {
+    activeHandle(value) {
+      this.active = value + 1
+    }
   }
 }
 </script>

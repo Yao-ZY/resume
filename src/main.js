@@ -3,11 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { progress, button } from 'element-ui'
+import { progress, button, menu, menuItem } from 'element-ui'
 
 Vue.config.productionTip = false
 Vue.component('el-progress', progress)
 Vue.component('el-button', button)
+Vue.component('el-menu', menu)
+Vue.component('el-menu-item', menuItem)
 
 /* eslint-disable no-new */
 new Vue({
