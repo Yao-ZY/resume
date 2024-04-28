@@ -50,26 +50,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../assets/less/theme_color.less';
-
-.navigation {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: @theme-component-color;
-    border-radius: 15px;
-    border: none;
-
-    .el-menu-item.is-active, .el-menu-item:hover {
-        color: @theme-color !important;
-        background-color: transparent !important;
-    }
-
-    .el-menu-item {
-        background-color: transparent !important;
-        margin-left: -5px;
-    }
-
-}
+@import '../assets/less/navigation_style.less';
 </style>
